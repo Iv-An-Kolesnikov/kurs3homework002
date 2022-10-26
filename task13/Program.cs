@@ -2,28 +2,17 @@
 // 645 -> 5
 // 78 -> третьей цифры нет
 // 32679 -> 6
-
-// ЗАДАЧА НЕ РЕШЕНА!!
-
 Console.Clear();
+int i = 10;
+int j = 1;
 Console.Write("Введите пожалуйста число: ");
 int num = Convert.ToInt32(Console.ReadLine());
 if (num < 100) Console.Write($"{num} -> Третьей цифры нет");
-if ((num > 99) & (num < 999)) Console.Write($"{num} -> {num % 10}");
-// num > 1000
-int i = 10;
-int j = 10;
-int num1 = 0;
-int num2 = 0;
-while (i >= 1)
+while ( i >= 1)
 {
-    if ((num > 99*i) & (num < 999*i)) 
+    if ((num > (10 * i) - 1) & (num < (100 * i) - 1)) 
     {
-        num1 = (num / i) % i;
-        num2 = num1 % (i / j);
-
-        Console.WriteLine($"{num} -> {num1} -> {num2}");
-        Console.Write(i);
+        Console.Write($"{num} -> {(num % i) / j}");
         break;
     }
     else 
